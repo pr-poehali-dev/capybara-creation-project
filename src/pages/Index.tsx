@@ -14,6 +14,7 @@ interface Capybara {
   level: number;
   age: number;
   mood: "happy" | "hungry" | "dirty" | "sleepy" | "playful";
+  portrait: string;
 }
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
       level: 3,
       age: 12,
       mood: "happy",
+      portrait: "/img/747bffbd-3d04-4f0b-bc42-1bd336d30b41.jpg",
     },
     {
       id: 2,
@@ -38,6 +40,7 @@ const Index = () => {
       level: 2,
       age: 8,
       mood: "hungry",
+      portrait: "/img/51bb71a8-2dfc-41b5-a6ad-4a1ad42f9911.jpg",
     },
     {
       id: 3,
@@ -48,6 +51,7 @@ const Index = () => {
       level: 4,
       age: 15,
       mood: "playful",
+      portrait: "/img/ad150189-1918-4afd-a193-fe088e3dd4c5.jpg",
     },
   ]);
 
@@ -180,9 +184,9 @@ const Index = () => {
               <CardHeader className="text-center pb-3">
                 <div className="relative">
                   <img
-                    src="/img/3f8845cf-9c91-4e31-9436-25febf2e27ef.jpg"
+                    src={capybara.portrait}
                     alt={capybara.name}
-                    className="w-24 h-24 mx-auto rounded-full border-4 border-[#8B4513]/30 shadow-lg"
+                    className="w-24 h-24 mx-auto rounded-full border-4 border-[#8B4513]/30 shadow-lg object-cover"
                   />
                   <div className="absolute -top-2 -right-2 text-2xl bg-white rounded-full p-1 shadow-md">
                     {getMoodEmoji(capybara.mood)}
